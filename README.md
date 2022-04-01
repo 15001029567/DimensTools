@@ -1,0 +1,2 @@
+# DimensTools
+一个AndroidStudio插件批量生成指定分辨率与缩放比的dimens.xml文件
