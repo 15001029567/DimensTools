@@ -1,0 +1,33 @@
+<idea-plugin>
+    <id>com.dimens.values.tools</id>
+    <name>DimensTools</name>
+    <version>1.0</version>
+    <vendor email="970098058@qq.com"/>
+
+    <description>Generate values files for each resolution
+        为各指定分辨率生成对应values文件,在基准values中的dimens.xml文件中右键或者使用ALT+INSERT键调起Generate group 选择Build Dimens Files
+    </description>
+
+    <change-notes>Generate values files for each resolution,finish build and upload plugin</change-notes>
+
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/build-number-ranges.html for description -->
+    <idea-version since-build="173.0"/>
+
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <action id="build values" class="com.dimens.values.BuildDimesFiles" text="Build Dimens Files"
+                description="create dimens.xml for each resolution">
+            <add-to-group group-id="GenerateGroup" anchor="first"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt INSERT" second-keystroke="ctrl alt V"/>
+        </action>
+    </actions>
+
+</idea-plugin>
