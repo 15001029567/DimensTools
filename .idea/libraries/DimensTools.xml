@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="DimensTools">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/DimensTools.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
