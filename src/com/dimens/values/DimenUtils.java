@@ -1,5 +1,6 @@
 package com.dimens.values;
 
+import javax.swing.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -10,13 +11,15 @@ import java.io.PrintWriter;
  * @创建时间 3/11/22 12:03 PM
  */
 public class DimenUtils {
-    private final static String rootPath = "./app/src/main/res/values-{0}x{1}";
+    private final static String rootPath = "./app/src/main/res/com.dimens.values-{0}x{1}";
     private final static int defaultWidth = 1440;//默认布局的宽
     private final static int defaultHeight = 1728;//默认布局的高
     private final static String WTemplate = "<dimen name=\"dp_{0}\">{1}px</dimen>\n";
+
     public static void main(String[] args) {
         makeString(1440,1728);
     }
+
     public static void makeString(int w, int h) {
         StringBuffer sb = new StringBuffer();
         sb.append("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n");
