@@ -11,6 +11,11 @@ public class DimensBean {
         this.scale = scale;
     }
 
+    public DimensBean(int width, float scale) {
+        this.width = width;
+        this.scale = scale;
+    }
+
     public int getWidth() {
         return width;
     }

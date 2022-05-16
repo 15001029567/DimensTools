@@ -97,4 +97,38 @@ public class ParserXMLMakeDimesFiles {
             e.printStackTrace();
         }
     }
+
+    //创建文件并写入内容
+    public static void makeFileForSW(String rootPath, int w, float scale) {
+        if (TextUtils.isEmpty(rootPath)) {
+            return;
+        }
+        String targetPath;
+        String baseFilePath;
+        if (rootPath.contains("-sw")) {
+            targetPath = rootPath.split("-sw")[0];
+        } else if (rootPath.contains("dimens.xml")) {
+            targetPath = rootPath.replace("/dimens.xml", "").trim();
+        } else {
+            targetPath = rootPath;
+        }
+        if (rootPath.contains("dimens.xml")) {
+            baseFilePath = rootPath.replace("/dimens.xml", "").trim();
+        } else {
+            baseFilePath = rootPath;
+        }
+        String path = targetPath + "-sw" + w + "dp";
+        File rootFile = new File(path);
+        if (!rootFile.exists()) {
+            rootFile.mkdirs();
+        }
+        File file = new File(path, "dimens.xml");
+        try {
+            PrintWriter pw = new PrintWriter(new FileOutputStream(file));
+            pw.println(pullParser(baseFilePath + "/dimens.xml", scale));
+            pw.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 }

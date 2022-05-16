@@ -12,12 +12,12 @@ import java.io.PrintWriter;
  */
 public class DimenUtils {
     private final static String rootPath = "./app/src/main/res/com.dimens.values-{0}x{1}";
-    private final static int defaultWidth = 1440;//默认布局的宽
+    private final static int defaultWidth = 1920;//默认布局的宽
     private final static int defaultHeight = 1728;//默认布局的高
     private final static String WTemplate = "<dimen name=\"dp_{0}\">{1}px</dimen>\n";
 
     public static void main(String[] args) {
-        makeString(1440,1728);
+        makeString(1920,1728);
     }
 
     public static void makeString(int w, int h) {

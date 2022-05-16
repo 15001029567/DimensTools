@@ -1,7 +1,7 @@
 <idea-plugin>
   <id>com.dimens.values.tools</id>
   <name>DimensTools</name>
-  <version>1.0</version>
+  <version>2.0</version>
   <vendor email="970098058@qq.com"/>
 
   <description>Generate values files for each resolution
@@ -27,6 +27,10 @@
             description="create dimens.xml for each resolution">
       <add-to-group group-id="GenerateGroup" anchor="first"/>
       <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt INSERT" second-keystroke="ctrl alt V"/>
+    </action>
+    <action id="Build Dimens File for SW" class="com.dimens.values.BuildDimensFilesForSW" text="BuildDimensFilesForSW"
+            description="make dimens for smallest width adapter">
+      <add-to-group group-id="GenerateGroup" anchor="first"/>
     </action>
   </actions>
 
